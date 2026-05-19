@@ -1,6 +1,6 @@
 import Contact from "@/components/view/ElaqePageView";
 
-export default function elaqePage() {
+export default function ElaqePage() {
   return (
     <>
       <Contact />

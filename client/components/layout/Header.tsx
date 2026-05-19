@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { Logo } from "../common/Logo";
 
 interface NavLink {
   href: string;
@@ -39,15 +40,12 @@ export function Navbar() {
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-cream/85 backdrop-blur-xl border-b border-cocoa/10"
-          : "bg-transparent"
+          : "bg-cream/85"
       }`}
     >
       <div className="container-luxe flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-baseline gap-2 text-cocoa">
-          <span className="display text-3xl tracking-tight">MİLLİ</span>
-          <span className="hidden text-[0.6rem] uppercase tracking-[0.32em] text-bronze sm:inline">
-            Yerli Ruhla
-          </span>
+        <Link href="/" className="flex items-center gap-3 text-cocoa">
+          <Logo className="h-12 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-10 lg:flex">
@@ -80,12 +78,7 @@ export function Navbar() {
           </div>
         </nav>
 
-        <Link
-          href="/lezzetlerimiz"
-          className="hidden border border-cocoa px-6 py-3 text-[0.7rem] uppercase tracking-[0.28em] text-cocoa transition-all hover:bg-cocoa hover:text-cream lg:inline-flex"
-        >
-          Rezerv et
-        </Link>
+
 
         <button
           aria-label="Menyu"

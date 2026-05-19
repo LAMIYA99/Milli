@@ -49,7 +49,7 @@ export default function HomeView() {
 
           <div className="mt-12 flex flex-wrap items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: ".3s" }}>
             <Link href="/lezzetlerimiz" className="btn-primary !border-cream !bg-cream !text-cocoa hover:!bg-transparent hover:!text-cream">
-              Menyuya Bax
+            Hamısına bax
               <span aria-hidden>→</span>
             </Link>
             <Link href="/haqqimizda" className="btn-ghost !border-cream/50 !text-cream hover:!bg-cream hover:!text-cocoa">
@@ -156,13 +156,12 @@ export default function HomeView() {
 
           <div className="mt-16 text-center">
             <Link href="/lezzetlerimiz" className="btn-primary">
-              Tam menyuya bax →
+            Hamısına bax
             </Link>
           </div>
         </div>
       </section>
 
-      {/* PARTNERS */}
       <section className="py-28">
         <div className="container-luxe text-center">
           <span className="eyebrow">Əməkdaşlıqlar</span>
@@ -207,9 +206,7 @@ export default function HomeView() {
               <p>☎ +994 12 345 67 89</p>
               <p>✉ salam@milli.az</p>
             </div>
-            <Link href="/elaqe" className="btn-ghost mt-10 !border-cream/40 !text-cream hover:!bg-cream hover:!text-cocoa">
-              Rezerv et →
-            </Link>
+          
           </div>
           <div className="relative aspect-square overflow-hidden border border-cream/15 md:aspect-auto">
             <iframe

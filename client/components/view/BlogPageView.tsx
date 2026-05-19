@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { PageHeader } from "@/components/common/PageHeader";
 
-// Placeholders
 const blog1 = "https://images.unsplash.com/photo-1509440159596-0249088772ff";
 const blog2 = "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085";
 const blog3 = "https://images.unsplash.com/photo-1549492423-400259a2e574";

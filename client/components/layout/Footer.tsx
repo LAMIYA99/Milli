@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Divider } from "../common/Ornaments";
+import { Logo } from "../common/Logo";
 
 export function Footer() {
   return (
@@ -8,10 +9,9 @@ export function Footer() {
         <Divider className="mb-14 text-cream/40" />
         <div className="grid gap-14 md:grid-cols-4">
           <div className="md:col-span-2">
-            <h3 className="display text-4xl">MİLLİ</h3>
-            <p className="mt-2 text-[0.7rem] uppercase tracking-[0.32em] text-cream/60">
-              Yerli Ruhla
-            </p>
+            <Link href="/" className="inline-block text-cream">
+              <Logo className="h-16 w-auto" />
+            </Link>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/70">
               Azərbaycan mədəniyyətinin isti nəfəsini, qonaqpərvərliyimizin əsl
               mənasını və əl ilə yaradılan ləzzətlərin incəliyini bir süfrədə

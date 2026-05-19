@@ -19,6 +19,38 @@ export default function About() {
         subtitle="MİLLİ — bir məkan deyil, Azərbaycan mədəniyyətinə həsr olunmuş canlı bir hekayədir. Hər küncündə bir nəsil, hər ləzzətində bir vətən."
       />
 
+      {/* BREND DƏYƏRLƏRİ & MİSSİYA */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container-luxe grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+          
+          {/* Left Image/Graphic Area */}
+          <div className="relative w-full aspect-[5/4] md:aspect-[4/3] flex items-center justify-center p-4 order-last md:order-first">
+            <img 
+              src="/milli-local-spirit.jpg" 
+              alt="Milli Local Spirit" 
+              className="w-full h-full object-contain" 
+            />
+          </div>
+
+          {/* Right Content */}
+          <div className="flex flex-col items-start max-w-xl">
+            <span className="text-sm font-bold tracking-[0.15em] text-[#A65B45] uppercase mb-6 md:mb-8">
+              Brend dəyərləri & missiya
+            </span>
+            <h2 className="text-6xl md:text-[75px] font-extrabold text-[#111] leading-[1.1] mb-8 md:mb-12">
+              MİLLİ<br />
+              Hekayəsi
+            </h2>
+            <p className="text-[17px] md:text-[20px] leading-[1.8] font-medium text-[#111]">
+              <span className="bg-[#D4E3FF] box-decoration-clone px-1 py-[2px] whitespace-pre-wrap">
+                MİLLİ brendi olaraq missiyamız – qlobal mətbəx dadlarını yerli ruhla birləşdirərək Bravo müştərisinə daha premium, sürətli və standartlaşdırılmış yemək təcrübəsi təqdim etməkdir.
+              </span>
+            </p>
+          </div>
+
+        </div>
+      </section>
+
       <section className="py-20">
         <div className="container-luxe grid items-center gap-16 md:grid-cols-2">
           <img src={aboutCraft} alt="Sənətkar" className="aspect-[4/5] w-full object-cover" loading="lazy" />
