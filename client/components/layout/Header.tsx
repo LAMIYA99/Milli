@@ -19,6 +19,11 @@ const links: NavLink[] = [
   { href: "/elaqe", label: "Əlaqə" },
 ];
 
+const dropdown: NavLink[] = [
+
+  { href: "/qalereya", label: "Qalereya" },
+];
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);

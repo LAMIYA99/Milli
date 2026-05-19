@@ -1,84 +1,167 @@
 import { PageHeader } from "@/components/common/PageHeader";
-import { Divider, ButaOrnament } from "@/components/common/Ornaments";
+import { Divider } from "@/components/common/Ornaments";
+import { comboItems, images, menuArchitectureItems, saladFeatures } from "@/constant/SectionData";
 
-const menuPakhlava = "https://images.unsplash.com/photo-1519676867240-f03562e64548?q=80&w=1974&auto=format&fit=crop";
-const menuTea = "https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=1974&auto=format&fit=crop";
-const menuCoffee = "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop";
-const gallery2 = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop";
-const gallery3 = "https://images.unsplash.com/photo-1590004953392-5aba2e785943?q=80&w=2070&auto=format&fit=crop";
 
-const sections = [
-  {
-    title: "Qəhvə Sənəti",
-    img: menuCoffee,
-    items: [
-      { name: "Espresso Yerli", price: "5₼", desc: "Tək mənbəli, qara karamel notları" },
-      { name: "Cappuccino MİLLİ", price: "7₼", desc: "İpəkvari süd köpüyü, evdə qovrulan dənələr" },
-      { name: "Filtr Qəhvə", price: "6₼", desc: "Slow-drip, gündəlik mənşə dəyişir" },
-      { name: "Buz Latte", price: "8₼", desc: "Soyuq dəmləmə + vanil notu" },
-    ],
-  },
-  {
-    title: "Ənənəvi Şirniyyatlar",
-    img: menuPakhlava,
-    items: [
-      { name: "Bakı Paxlavası", price: "9₼", desc: "Qoz, bal, zəfəran" },
-      { name: "Şəkərbura", price: "7₼", desc: "Zərif xəmir, qoz dolğusu" },
-      { name: "Şəki Halvası", price: "10₼", desc: "Şəkidən gətirilən əl işi" },
-      { name: "Qoğal", price: "5₼", desc: "Ənənəvi çörəkçi reseptində" },
-    ],
-  },
-  {
-    title: "Çay Ritualı",
-    img: menuTea,
-    items: [
-      { name: "Lənkəran Çayı", price: "4₼", desc: "Armudu stəkanda, samovardan" },
-      { name: "Çobanyastığı", price: "5₼", desc: "Dağ otları qarışığı" },
-      { name: "Nar Çayı", price: "6₼", desc: "Quru nar dənələri ilə" },
-      { name: "Zəfəran Latte", price: "8₼", desc: "İsti süd, bal, zəfəran" },
-    ],
-  },
-];
+
+
 
 export default function Menu() {
   return (
     <>
       <PageHeader
-        eyebrow="Ləzzətlərimiz"
-        title="Süfrəmizdən bir nəfəs"
-        subtitle="Hər fincan, hər dilim — uzun illərin sənətkarlığı və yerli torpağın səxavəti ilə hazırlanır."
+        eyebrow="Kulinariya Jurnalı"
+        title="MİLLİ Ləzzət Təcrübəsi"
+        subtitle="Bura sadəcə bir menyu deyil, hər bir reseptin, hər bir paketin və qablaşdırmanın öz hekayəsi olan kulinariya səyahətidir."
       />
 
-      <div className="container-luxe space-y-24 pb-32">
-        {sections.map((s, i) => (
-          <section key={s.title} className={`grid items-center gap-12 md:grid-cols-2 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
-            <div className="relative">
-              <img src={s.img} alt={s.title} className="aspect-square w-full object-cover" loading="lazy" />
-              <ButaOrnament className="absolute -bottom-6 -right-6 hidden h-20 w-16 text-bronze md:block" />
-            </div>
-            <div>
-              <span className="eyebrow">0{i + 1}</span>
-              <h2 className="display mt-4 text-4xl md:text-5xl">{s.title}</h2>
-              <Divider className="my-8 !justify-start" />
-              <ul className="divide-y divide-cocoa/10">
-                {s.items.map((it) => (
-                  <li key={it.name} className="flex items-baseline gap-4 py-5">
-                    <div className="flex-1">
-                      <h3 className="display text-xl text-cocoa">{it.name}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">{it.desc}</p>
-                    </div>
-                    <span className="display text-xl text-bronze">{it.price}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        ))}
+      <div className="container-luxe pb-32">
+        
+        <section className="py-16 md:py-24 border-b border-black/5">
+          <div className="mb-12 md:mb-16">
+            <h2 className="display text-5xl md:text-6xl lg:text-7xl mb-6 text-cocoa">
+              Menyu<br className="hidden md:block"/> Arxitekturası
+            </h2>
+            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground max-w-3xl">
+              MİLLİ brendi altında yenilənmiş və standartlaşdırılmış vizual elementlər. 
+              Beynəlxalq keyfiyyətin Local Spirit harmoniyası.
+            </p>
+            <Divider className="my-8 !justify-start w-full border-black/10" />
+          </div>
 
-        <section className="grid gap-6 md:grid-cols-2">
-          <img src={gallery2} alt="Şirniyyat" className="aspect-[4/3] w-full object-cover" loading="lazy" />
-          <img src={gallery3} alt="Nar" className="aspect-[4/3] w-full object-cover" loading="lazy" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+            {menuArchitectureItems.map((item) => (
+              <div key={item.id} className="group cursor-pointer">
+                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-[#F2EDE4] mb-6">
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <h3 className="display text-2xl md:text-3xl mb-3 text-cocoa">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-[15px]">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
+
+        {/* SECTION 2: DADLI TƏKLİFLƏR (Large Featured Posts) */}
+        <section className="py-20 md:py-28 bg-[#FEF1E1] -mx-4 px-4 md:-mx-8 md:px-8 lg:-mx-16 lg:px-16 mt-12 mb-12">
+          <div className="mb-16 max-w-4xl">
+            <span className="eyebrow mb-4 block">
+              Kampaniyalar & Xüsusi Təkliflər
+            </span>
+            <h2 className="display text-5xl md:text-6xl lg:text-7xl text-cocoa">
+              Dadlı Təkliflər və Kombo Menyular
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            {comboItems.map((combo) => (
+              <div key={combo.id} className="group cursor-pointer bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <img src={combo.image} alt={combo.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                </div>
+                <div className="p-8 md:p-10 flex flex-col flex-grow">
+                  <h3 className="display text-3xl md:text-4xl mb-4 text-cocoa">{combo.title}</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-10 flex-grow">
+                    {combo.description}
+                  </p>
+                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-cocoa/10">
+                    <span className="eyebrow !text-xs !mb-0">{combo.category}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* SECTION 3: SALAT BARI (Cinematic Full Width Image + 3 Text Columns) */}
+        <section className="py-20 md:py-28 border-b border-black/5">
+          <div className="relative w-full aspect-[4/3] md:aspect-[2.5/1] rounded-[40px] overflow-hidden mb-16 md:mb-24 shadow-2xl">
+            <img src={images.saladBar} alt="Milli Salat Barı" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end">
+               <div className="p-8 md:p-16 w-full max-w-5xl">
+                  <span className="eyebrow !text-white/80 mb-4 block">Təravət Hekayəsi</span>
+                  <h2 className="display text-4xl md:text-6xl lg:text-7xl text-white mb-4">Sağlamlığın və Təravətin Mərkəzi</h2>
+               </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-16 px-2 md:px-8">
+            {saladFeatures.map((feature) => (
+              <div key={feature.id} className="flex flex-col items-center text-center">
+                <h3 className="display text-3xl mb-4 text-cocoa">
+                  {feature.titleLines.map((line, index) => (
+                    <span key={index}>
+                      {line}
+                      {index < feature.titleLines.length - 1 && <br />}
+                    </span>
+                  ))}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed max-w-sm">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* SECTION 4: FASTFOOD KOMFORTU (Split Content) */}
+        <section className="py-20 md:py-32">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            
+            {/* Typography Left */}
+            <div className="flex flex-col max-w-2xl">
+              <h2 className="display text-5xl md:text-6xl lg:text-7xl text-cocoa mb-8">
+                Fastfood<br/>Komfortu,<br/>Milli Ruhla
+              </h2>
+              <h3 className="display text-2xl md:text-3xl text-bronze mb-10">
+                Çatdırılma və paket servis üçün yaradılmış dadlar
+              </h3>
+              
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  MİLLİ, sürətli həyat ritminə uyğun, amma dad və keyfiyyətdən güzəştə getməyən 
+                  fastfood konseptidir. Bizim üçün əsas, qonaqların milli yerli ruh dəyərlərindən 
+                  uzaqlaşmadan, rahat və sürətli şəkildə yemək zövqü yaşamasıdır.
+                </p>
+                <p>
+                  Konseptimiz daha çox çatdırılma və paket servis üzərində qurulub. İstər 
+                  Bravo daxilində alış-verişdən sonra, istər evə və ya işə aparmaq üçün - MİLLİ 
+                  paketləri yolüstü rahat, isti və təmiz saxlanması üçün düşünülüb.
+                </p>
+                <p>
+                  Loqolu plov box-lar, milli dönər, burger və kabab burger qablaşdırmaları MİLLİ 
+                  brendini hər addımda görünən edir. Hər paket həm praktik seçimdir, həm də 
+                  Azərbaycanın zəngin mətbəx irsini müasir formada daşıyan kiçik bir brend vizit kartıdır.
+                </p>
+              </div>
+            </div>
+
+            {/* Editorial Grid Right */}
+            <div className="grid grid-cols-2 gap-4 md:gap-6">
+              <div className="space-y-4 md:space-y-6 pt-12 md:pt-24">
+                <div className="rounded-[32px] overflow-hidden aspect-[4/5] shadow-lg">
+                   <img src={images.fastfood1} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Bags" />
+                </div>
+                <div className="rounded-[32px] overflow-hidden aspect-square shadow-lg">
+                   <img src={images.fastfood3} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Cups" />
+                </div>
+              </div>
+              <div className="space-y-4 md:space-y-6">
+                <div className="rounded-[32px] overflow-hidden aspect-square shadow-lg">
+                   <img src={images.fastfood2} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Burger box" />
+                </div>
+                <div className="rounded-[32px] overflow-hidden aspect-[4/5] shadow-lg">
+                   <img src={images.plov} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Takeout bowls" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
       </div>
     </>
   );

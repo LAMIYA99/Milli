@@ -1,6 +1,6 @@
 import { PageHeader } from "@/components/common/PageHeader";
 
-// Placeholders
+
 const t1 = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d";
 const t2 = "https://images.unsplash.com/photo-1494790108377-be9c29b29330";
 const t3 = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e";
