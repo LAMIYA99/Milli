@@ -19,7 +19,7 @@ export default function Team() {
         <div className="grid gap-12 md:grid-cols-3">
           {team.map((m) => (
             <div key={m.name} className="group">
-              <div className="aspect-[4/5] overflow-hidden">
+              <div className="aspect-4/5 overflow-hidden">
                 <img src={m.img} alt={m.name} className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" loading="lazy" />
               </div>
               <div className="mt-6 text-center">

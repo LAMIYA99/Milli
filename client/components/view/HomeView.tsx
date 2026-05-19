@@ -33,7 +33,7 @@ export default function HomeView() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-screen min-h-[680px] w-full overflow-hidden">
+      <section className="relative h-screen min-h-170 w-full overflow-hidden">
         <img
           src={heroCafe}
           alt="MİLLİ café atmosferi"
@@ -41,7 +41,7 @@ export default function HomeView() {
           width={1920}
           height={1280}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-cocoa/40 via-cocoa/30 to-cocoa/85" />
+        <div className="absolute inset-0 bg-linear-to-b from-cocoa/40 via-cocoa/30 to-cocoa/85" />
         <img
           src={textureCarpet}
           alt=""
@@ -60,11 +60,11 @@ export default function HomeView() {
           </p>
 
           <div className="mt-12 flex flex-wrap items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: ".3s" }}>
-            <Link href="/lezzetlerimiz" className="btn-primary !border-cream !bg-cream !text-cocoa hover:!bg-transparent hover:!text-cream">
+            <Link href="/lezzetlerimiz" className="btn-primary border-cream! bg-cream! text-cocoa! hover:bg-transparent! hover:text-cream!">
               Hamısına bax
               <span aria-hidden>→</span>
             </Link>
-            <Link href="/haqqimizda" className="btn-ghost !border-cream/50 !text-cream hover:!bg-cream hover:!text-cocoa">
+            <Link href="/haqqimizda" className="btn-ghost border-cream/50! text-cream! hover:bg-cream! hover:text-cocoa!">
               Hekayəmiz
             </Link>
           </div>
@@ -83,7 +83,7 @@ export default function HomeView() {
 
         <div className="container-luxe grid items-center gap-16 md:grid-cols-2 md:gap-24">
           <div className="relative">
-            <div className="relative aspect-[4/5] overflow-hidden">
+            <div className="relative aspect-4/5 overflow-hidden">
               <img
                 src={aboutCraft}
                 alt="Samovardan çay süzən sənətkar"
@@ -105,7 +105,7 @@ export default function HomeView() {
               MİLLİ brendi<br />
               <em className="not-italic text-bronze">olaraq missiyamız.</em>
             </h2>
-            <Divider className="my-10 !justify-start" />
+            <Divider className="my-10 justify-start!" />
             <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
               MİLLİ — Bakının qəlbində qurulmuş bir məkan deyil; o, nənələrimizin
               süfrə dilini, samovarın səbrini və xalçanın naxışlarındakı sükutu
@@ -142,7 +142,7 @@ export default function HomeView() {
                 key={m.name}
                 className="group relative bg-card transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_30px_60px_-30px_rgba(78,41,27,0.45)]"
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative aspect-4/5 overflow-hidden">
                   <img
                     src={m.img}
                     alt={m.name}
@@ -151,7 +151,7 @@ export default function HomeView() {
                     width={1024}
                     height={1280}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-cocoa/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-linear-to-t from-cocoa/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 </div>
                 <div className="relative border-t border-bronze/20 p-8">
                   <ButaOrnament className="absolute -top-5 right-6 h-10 w-8 bg-card text-bronze opacity-60" />
@@ -188,7 +188,7 @@ export default function HomeView() {
           <div className="mt-20 grid gap-12 md:grid-cols-3">
             {team.map((m) => (
               <div key={m.name} className="group">
-                <div className="aspect-[4/5] overflow-hidden rounded-2xl border border-cocoa/10">
+              <div className="aspect-4/5 overflow-hidden rounded-2xl border border-cocoa/10">
                   <img
                     src={m.img}
                     alt={m.name}
@@ -256,7 +256,7 @@ export default function HomeView() {
             </div>
 
           </div>
-          <div className="relative aspect-square overflow-hidden rounded-3xl border border-cocoa/15 lg:aspect-auto lg:h-[600px]">
+          <div className="relative aspect-square overflow-hidden rounded-3xl border border-cocoa/15 lg:aspect-auto lg:h-150">
             <ClientMap />
           </div>
         </div>

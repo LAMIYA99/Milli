@@ -26,15 +26,15 @@ export default function Menu() {
               MİLLİ brendi altında yenilənmiş və standartlaşdırılmış vizual elementlər. 
               Beynəlxalq keyfiyyətin Local Spirit harmoniyası.
             </p>
-            <Divider className="my-8 !justify-start w-full border-black/10" />
+            <Divider className="my-8 justify-start! w-full border-black/10" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {menuArchitectureItems.map((item) => (
               <div key={item.id} className="group cursor-pointer">
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-[#F2EDE4] mb-6">
+                <div className="relative aspect-4/5 rounded-3xl overflow-hidden bg-[#F2EDE4] mb-6">
                   <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 <h3 className="display text-2xl md:text-3xl mb-3 text-cocoa">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed text-[15px]">
@@ -58,17 +58,17 @@ export default function Menu() {
 
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {comboItems.map((combo) => (
-              <div key={combo.id} className="group cursor-pointer bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
-                <div className="relative aspect-[16/10] overflow-hidden">
+              <div key={combo.id} className="group cursor-pointer bg-white rounded-4xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
+                <div className="relative aspect-16/10 overflow-hidden">
                   <img src={combo.image} alt={combo.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
-                <div className="p-8 md:p-10 flex flex-col flex-grow">
+                <div className="p-8 md:p-10 flex flex-col grow">
                   <h3 className="display text-3xl md:text-4xl mb-4 text-cocoa">{combo.title}</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-10 flex-grow">
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-10 grow">
                     {combo.description}
                   </p>
                   <div className="flex items-center justify-between mt-auto pt-6 border-t border-cocoa/10">
-                    <span className="eyebrow !text-xs !mb-0">{combo.category}</span>
+                    <span className="eyebrow text-xs! mb-0!">{combo.category}</span>
                   </div>
                 </div>
               </div>
@@ -78,11 +78,11 @@ export default function Menu() {
 
         {/* SECTION 3: SALAT BARI (Cinematic Full Width Image + 3 Text Columns) */}
         <section className="py-20 md:py-28 border-b border-black/5">
-          <div className="relative w-full aspect-[4/3] md:aspect-[2.5/1] rounded-[40px] overflow-hidden mb-16 md:mb-24 shadow-2xl">
+          <div className="relative w-full aspect-4/3 md:aspect-2.5/1 rounded-[40px] overflow-hidden mb-16 md:mb-24 shadow-2xl">
             <img src={images.saladBar} alt="Milli Salat Barı" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end">
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent flex items-end">
                <div className="p-8 md:p-16 w-full max-w-5xl">
-                  <span className="eyebrow !text-white/80 mb-4 block">Təravət Hekayəsi</span>
+                  <span className="eyebrow text-white/80! mb-4 block">Təravət Hekayəsi</span>
                   <h2 className="display text-4xl md:text-6xl lg:text-7xl text-white mb-4">Sağlamlığın və Təravətin Mərkəzi</h2>
                </div>
             </div>
@@ -142,18 +142,18 @@ export default function Menu() {
             {/* Editorial Grid Right */}
             <div className="grid grid-cols-2 gap-4 md:gap-6">
               <div className="space-y-4 md:space-y-6 pt-12 md:pt-24">
-                <div className="rounded-[32px] overflow-hidden aspect-[4/5] shadow-lg">
+                <div className="rounded-4xl overflow-hidden aspect-4/5 shadow-lg">
                    <img src={images.fastfood1} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Bags" />
                 </div>
-                <div className="rounded-[32px] overflow-hidden aspect-square shadow-lg">
+                <div className="rounded-4xl overflow-hidden aspect-square shadow-lg">
                    <img src={images.fastfood3} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Cups" />
                 </div>
               </div>
               <div className="space-y-4 md:space-y-6">
-                <div className="rounded-[32px] overflow-hidden aspect-square shadow-lg">
+                <div className="rounded-4xl overflow-hidden aspect-square shadow-lg">
                    <img src={images.fastfood2} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Burger box" />
                 </div>
-                <div className="rounded-[32px] overflow-hidden aspect-[4/5] shadow-lg">
+                <div className="rounded-4xl overflow-hidden aspect-4/5 shadow-lg">
                    <img src={images.plov} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Takeout bowls" />
                 </div>
               </div>

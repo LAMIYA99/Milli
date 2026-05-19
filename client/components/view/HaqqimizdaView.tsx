@@ -54,7 +54,7 @@ export default function About() {
           </div>
 
 
-          <div className="relative w-full aspect-[5/4] md:aspect-[4/3] flex items-center justify-center">
+          <div className="relative w-full aspect-5/4 md:aspect-4/3 flex items-center justify-center">
             <img
               src="/milli-local-spirit.jpg"
               alt="Milli Local Spirit"
@@ -69,7 +69,7 @@ export default function About() {
           <img
             src={aboutCraft}
             alt="Sənətkar"
-            className="aspect-[4/5] w-[520px] h-[520px] object-cover rounded-tl-[80px] rounded-br-[80px] md:rounded-tl-[120px] md:rounded-br-[120px] shadow-xl"
+            className="aspect-4/5 w-130 h-130 object-cover rounded-tl-[80px] rounded-br-[80px] md:rounded-tl-[120px] md:rounded-br-[120px] shadow-xl"
             loading="lazy"
           />
           <div>
@@ -77,7 +77,7 @@ export default function About() {
             <h2 className="display mt-6 text-4xl md:text-5xl">
               Bir fincan çay, bir əsr hekayə.
             </h2>
-            <Divider className="my-8 !justify-start" />
+            <Divider className="my-8 justify-start!" />
             <p className="leading-relaxed text-muted-foreground">
               Bizim üçün yemək — sadəcə qida deyil, ünsiyyətin ən qədim
               formasıdır. MİLLİ-də ənənəvi reseptlər müasir texnika ilə qovuşur,
@@ -105,7 +105,7 @@ export default function About() {
               <h3 className="display mt-6 text-4xl md:text-5xl">
               Göz Qabağında və Tam Şəffaf
             </h3>
-   <Divider className="my-8 !justify-start" />
+   <Divider className="my-8 justify-start!" />
           
             <p className=" leading-relaxed text-muted-foreground">
               MİLLİ-də qlobal kulinariya irsi müasir və premium tərzdə
@@ -120,7 +120,7 @@ export default function About() {
           </div>
 
           {/* Right Image */}
-          <div className="relative w-full aspect-[4/5] md:aspect-square p-2 md:p-6">
+          <div className="relative w-full aspect-4/5 md:aspect-square p-2 md:p-6">
             <img 
               src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=2070&auto=format&fit=crop" 
               alt="Milli service" 
