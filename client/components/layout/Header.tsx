@@ -19,7 +19,7 @@ const links: NavLink[] = [
 ];
 
 const dropdown: NavLink[] = [
-  { href: "/komandamiz", label: "Komandamız" },
+
   { href: "/qalereya", label: "Qalereya" },
 ];
 
