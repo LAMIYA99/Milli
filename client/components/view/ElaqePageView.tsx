@@ -1,9 +1,48 @@
 "use client";
 
+import { useState, FormEvent } from "react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Divider } from "@/components/common/Ornaments";
+import ClientMap from "@/components/ui/ClientMap";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) return;
+
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Mesaj göndərilə bilmədi");
+      }
+
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (err) {
+      console.error("Contact Form Error:", err);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  };
+
   return (
     <>
       <PageHeader eyebrow="Əlaqə" title="Süfrəmizə dəvətlisiniz" subtitle="Sizi gözləyirik — bir fincan çay, bir hekayə və isti bir təbəssümlə." />
@@ -14,37 +53,74 @@ export default function Contact() {
           <h2 className="display mt-6 text-3xl md:text-4xl">Bakının qəlbində</h2>
           <Divider className="my-8 !justify-start" />
           <ul className="space-y-5 text-base text-cocoa">
-            <li><span className="text-bronze text-xs uppercase tracking-[0.28em] block mb-1">Ünvan</span>Nizami küçəsi 78, Bakı, AZ1000</li>
+            <li><span className="text-bronze text-xs uppercase tracking-[0.28em] block mb-1">Baş Ofis</span>Nizami küçəsi 78, Bakı, AZ1000</li>
             <li><span className="text-bronze text-xs uppercase tracking-[0.28em] block mb-1">Telefon</span>+994 12 345 67 89</li>
-            <li><span className="text-bronze text-xs uppercase tracking-[0.28em] block mb-1">E-poçt</span>salam@milli.az</li>
-            <li><span className="text-bronze text-xs uppercase tracking-[0.28em] block mb-1">İş saatları</span>Hər gün · 08:00 — 23:00</li>
+            <li><span className="text-bronze text-xs uppercase tracking-[0.28em] block mb-1">Təklif və iradlarınızı bizə yollayın</span>salam@milli.az</li>
+            <li><span className="text-bronze text-xs uppercase tracking-[0.28em] block mb-1">Məkanlarımız</span>BRAVO Azure · BRAVO Bayıl · BRAVO Lökbatan · BRAVO Babək</li>
           </ul>
         </div>
 
-        <form className="space-y-6 border border-cocoa/15 bg-card p-8 md:p-10" onSubmit={(e) => e.preventDefault()}>
-          <div>
-            <label className="text-[0.65rem] uppercase tracking-[0.28em] text-bronze">Ad Soyad</label>
-            <input className="mt-2 w-full border-b border-cocoa/30 bg-transparent py-3 outline-none focus:border-cocoa" />
+        <form className="space-y-6 border border-cocoa/15 bg-card p-8 md:p-10 flex flex-col justify-between" onSubmit={handleSubmit}>
+          <div className="space-y-6">
+            <div>
+              <label className="text-[0.65rem] uppercase tracking-[0.28em] text-bronze">Ad Soyad</label>
+              <input 
+                required
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="mt-2 w-full border-b border-cocoa/30 bg-transparent py-3 outline-none focus:border-cocoa text-cocoa transition-colors" 
+              />
+            </div>
+            <div>
+              <label className="text-[0.65rem] uppercase tracking-[0.28em] text-bronze">E-poçt</label>
+              <input 
+                required
+                type="email" 
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="mt-2 w-full border-b border-cocoa/30 bg-transparent py-3 outline-none focus:border-cocoa text-cocoa transition-colors" 
+              />
+            </div>
+            <div>
+              <label className="text-[0.65rem] uppercase tracking-[0.28em] text-bronze">Təklif və İradlarınız</label>
+              <textarea 
+                required
+                rows={4} 
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                className="mt-2 w-full border-b border-cocoa/30 bg-transparent py-3 outline-none focus:border-cocoa resize-none text-cocoa transition-colors" 
+              />
+            </div>
           </div>
-          <div>
-            <label className="text-[0.65rem] uppercase tracking-[0.28em] text-bronze">E-poçt</label>
-            <input type="email" className="mt-2 w-full border-b border-cocoa/30 bg-transparent py-3 outline-none focus:border-cocoa" />
+          
+          <div className="mt-6 space-y-4">
+            <button 
+              type="submit"
+              disabled={status === "loading"}
+              className="btn-primary w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+            >
+              {status === "loading" ? "Göndərilir..." : "Göndər →"}
+            </button>
+
+            {status === "success" && (
+              <p className="text-xs text-emerald-600 bg-emerald-50 border border-emerald-200 px-4 py-3 rounded-lg text-center animate-fade-in font-medium">
+                Mesajınız uğurla göndərildi! Ən qısa zamanda əlaqə saxlayacağıq.
+              </p>
+            )}
+
+            {status === "error" && (
+              <p className="text-xs text-rose-600 bg-rose-50 border border-rose-200 px-4 py-3 rounded-lg text-center animate-fade-in font-medium">
+                Göndərilmə zamanı xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.
+              </p>
+            )}
           </div>
-          <div>
-            <label className="text-[0.65rem] uppercase tracking-[0.28em] text-bronze">Mesaj</label>
-            <textarea rows={4} className="mt-2 w-full border-b border-cocoa/30 bg-transparent py-3 outline-none focus:border-cocoa resize-none" />
-          </div>
-          <button className="btn-primary w-full justify-center">Göndər →</button>
         </form>
       </section>
 
       <section className="container-luxe pb-32">
-        <iframe
-          title="Xəritə"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=49.83%2C40.37%2C49.86%2C40.39&layer=mapnik"
-          className="aspect-[21/9] w-full border border-cocoa/15 grayscale"
-          loading="lazy"
-        />
+        <div className="aspect-[21/9] w-full border border-cocoa/15 overflow-hidden rounded-3xl relative min-h-[350px] md:min-h-[450px]">
+          <ClientMap />
+        </div>
       </section>
     </>
   );

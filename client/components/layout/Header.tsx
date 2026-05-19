@@ -14,13 +14,9 @@ const links: NavLink[] = [
   { href: "/", label: "Ana Səhifə" },
   { href: "/haqqimizda", label: "Haqqımızda" },
   { href: "/lezzetlerimiz", label: "Ləzzətlərimiz" },
+  { href: "/gallery", label: "Qalereya" },
   { href: "/blog", label: "Blog" },
   { href: "/elaqe", label: "Əlaqə" },
-];
-
-const dropdown: NavLink[] = [
-  { href: "/komandamiz", label: "Komandamız" },
-  { href: "/qalereya", label: "Qalereya" },
 ];
 
 export function Navbar() {
@@ -60,22 +56,6 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
-          <div className="group relative">
-            <button className="link-underline text-[0.72rem] uppercase tracking-[0.28em] text-cocoa/80 hover:text-cocoa">
-              Səhifələr
-            </button>
-            <div className="invisible absolute right-0 top-full mt-4 min-w-[180px] border border-cocoa/10 bg-cream p-2 opacity-0 shadow-xl transition-all duration-300 group-hover:visible group-hover:opacity-100">
-              {dropdown.map((d) => (
-                <Link
-                  key={d.href}
-                  href={d.href}
-                  className="block px-4 py-3 text-[0.72rem] uppercase tracking-[0.28em] text-cocoa/80 transition-colors hover:bg-cream-soft hover:text-cocoa"
-                >
-                  {d.label}
-                </Link>
-              ))}
-            </div>
-          </div>
         </nav>
 
 
@@ -101,7 +81,7 @@ export function Navbar() {
       {open && (
         <div className="border-t border-cocoa/10 bg-cream lg:hidden">
           <div className="container-luxe flex flex-col py-6">
-            {[...links, ...dropdown].map((l) => (
+            {links.map((l) => (
               <Link
                 key={l.href || l.label}
                 href={l.href || "/"}

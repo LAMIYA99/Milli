@@ -26,7 +26,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-cream/80">
               <li><Link href="/haqqimizda" className="link-underline">Haqqımızda</Link></li>
               <li><Link href="/lezzetlerimiz" className="link-underline">Ləzzətlərimiz</Link></li>
-              <li><Link href="/qalereya" className="link-underline">Qalereya</Link></li>
+              <li><Link href="/gallery" className="link-underline">Qalereya</Link></li>
               <li><Link href="/blog" className="link-underline">Blog</Link></li>
             </ul>
           </div>

@@ -15,7 +15,7 @@ export default function Team() {
   return (
     <>
       <PageHeader eyebrow="Komanda" title="Süfrənin arxasındakı əllər" subtitle="Hər bir incəlik, hər bir təbəssüm — bu insanların ürəyindən gəlir." />
-      <section className="container-luxe pb-32">
+      <section className="container-luxe pb-32 ">
         <div className="grid gap-12 md:grid-cols-3">
           {team.map((m) => (
             <div key={m.name} className="group">
