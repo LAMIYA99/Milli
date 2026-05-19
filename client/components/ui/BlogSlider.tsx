@@ -2,18 +2,8 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import { blogPosts } from "@/constant/SectionData";
 
-const blog1 = "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop";
-const blog2 = "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=600&auto=format&fit=crop";
-const blog3 = "https://images.unsplash.com/photo-1549492423-400259a2e574?q=80&w=600&auto=format&fit=crop";
-const blog4 = "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=600&auto=format&fit=crop";
-
-const posts = [
-  { img: blog1, cat: "Sənət", date: "12 Mart 2024", title: "Əl ilə yoğrulan xəmirin sirri", excerpt: "Nənələrimizdən qalan reseptlərin müasir mətbəxdə yaşadılması." },
-  { img: blog2, cat: "Qəhvə", date: "28 Fevral 2024", title: "Tək mənşəli qəhvə: dünyadan süfrəmizə", excerpt: "Hər dənənin arxasındakı uzun yol və qovurma sənəti." },
-  { img: blog3, cat: "Mədəniyyət", date: "05 Yanvar 2024", title: "İçərişəhərin küçələrində bir gün", excerpt: "Bakının qədim daşlarında müasir bir nəfəs axtarışı." },
-  { img: blog4, cat: "Atmosfer", date: "20 Dekabr 2023", title: "MİLLİ-də səhər ritualı", excerpt: "Qədim samovarın tüstüsü ilə açılan xoş bir səhərin hekayəsi." },
-];
 
 export default function BlogSlider() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -41,7 +31,6 @@ export default function BlogSlider() {
             </h2>
           </div>
           
-          {/* Navigation buttons */}
           <div className="flex gap-4 mt-6 md:mt-0">
             <button 
               onClick={scrollLeft}
@@ -64,13 +53,12 @@ export default function BlogSlider() {
           </div>
         </div>
 
-        {/* Scrollable Container */}
         <div 
           ref={scrollRef}
           className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 no-scrollbar scrollbar-none"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {posts.map((p) => (
+          {blogPosts.map((p) => (
             <article 
               key={p.title} 
               className="min-w-[280px] sm:min-w-[340px] md:min-w-[380px] max-w-[380px] snap-start group cursor-pointer flex-shrink-0"

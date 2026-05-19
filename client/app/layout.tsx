@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import MainLayout from "@/components/layout/MainLayout";
+import PageLoader from "@/components/common/PageLoader";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,8 +37,11 @@ export default function RootLayout({
       className={`${inter.variable} ${cormorant.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <PageLoader />
         <MainLayout>{children}</MainLayout>
+        <ScrollToTop />
       </body>
     </html>
   );
 }
+

@@ -45,7 +45,7 @@ export default function Menu() {
           </div>
         </section>
 
-        {/* SECTION 2: DADLI TƏKLİFLƏR (Large Featured Posts) */}
+
         <section className="py-20 md:py-28 bg-[#FEF1E1] -mx-4 px-4 md:-mx-8 md:px-8 lg:-mx-16 lg:px-16 mt-12 mb-12">
           <div className="mb-16 max-w-4xl">
             <span className="eyebrow mb-4 block">
@@ -76,7 +76,6 @@ export default function Menu() {
           </div>
         </section>
 
-        {/* SECTION 3: SALAT BARI (Cinematic Full Width Image + 3 Text Columns) */}
         <section className="py-20 md:py-28 border-b border-black/5">
           <div className="relative w-full aspect-4/3 md:aspect-2.5/1 rounded-[40px] overflow-hidden mb-16 md:mb-24 shadow-2xl">
             <img src={images.saladBar} alt="Milli Salat Barı" className="w-full h-full object-cover" />
@@ -107,11 +106,9 @@ export default function Menu() {
           </div>
         </section>
 
-        {/* SECTION 4: FASTFOOD KOMFORTU (Split Content) */}
         <section className="py-20 md:py-32">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
-            {/* Typography Left */}
             <div className="flex flex-col max-w-2xl">
               <h2 className="display text-5xl md:text-6xl lg:text-7xl text-cocoa mb-8">
                 Fastfood<br/>Komfortu,<br/>Milli Ruhla
@@ -139,7 +136,6 @@ export default function Menu() {
               </div>
             </div>
 
-            {/* Editorial Grid Right */}
             <div className="grid grid-cols-2 gap-4 md:gap-6">
               <div className="space-y-4 md:space-y-6 pt-12 md:pt-24">
                 <div className="rounded-4xl overflow-hidden aspect-4/5 shadow-lg">

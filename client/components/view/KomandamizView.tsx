@@ -1,15 +1,6 @@
 import { PageHeader } from "@/components/common/PageHeader";
+import { team } from "@/constant/SectionData";
 
-
-const t1 = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d";
-const t2 = "https://images.unsplash.com/photo-1494790108377-be9c29b29330";
-const t3 = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e";
-
-const team = [
-  { img: t1, name: "Elvin Quliyev", role: "Baş Barista" },
-  { img: t2, name: "Aysel Hüseynli", role: "Şirniyyat Şefi" },
-  { img: t3, name: "Rüstəm Əliyev", role: "Baş Aşpaz" },
-];
 
 export default function Team() {
   return (

@@ -69,7 +69,7 @@
 }
 
 @layer components {
-  .container-luxe { @apply mx-auto w-full max-w-7xl px-6 md:px-10; }
+  .container-luxe { @apply mx-auto w-full max-w-[1440px] px-6 md:px-10; }
 
   .eyebrow {
     @apply inline-flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.32em] text-bronze;
@@ -142,3 +142,16 @@
 .animate-fade-in { animation: fade-in 1.2s ease-out both; }
 .animate-scroll-hint { animation: scroll-hint 1.8s ease-in-out infinite; }
 .animate-ken-burns { animation: ken-burns 18s ease-in-out infinite alternate; }
+
+@keyframes loading-bar {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(0.7); }
+  100% { transform: scaleX(1); }
+}
+.animate-loading-bar {
+  animation: loading-bar 1.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+.shadow-glow {
+  filter: drop-shadow(0 0 12px oklch(0.58 0.10 55 / 0.5));
+}
+
