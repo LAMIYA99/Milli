@@ -15,7 +15,7 @@ const links: NavLink[] = [
   { href: "/haqqimizda", label: "Haqqımızda" },
   { href: "/lezzetlerimiz", label: "Ləzzətlərimiz" },
   { href: "/gallery", label: "Qalereya" },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Bloq" },
   { href: "/elaqe", label: "Əlaqə" },
 ];
 
@@ -46,7 +46,7 @@ export function Navbar() {
     >
       <div className="container-luxe flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3 text-cocoa">
-          <Logo className="h-12 w-auto" />
+          <Logo className="h-[120px] w-[120px]" />
         </Link>
 
         <nav className="hidden items-center gap-10 lg:flex">
@@ -54,8 +54,8 @@ export function Navbar() {
             <Link
               key={l.href}
               href={l.href || "/"}
-              className={`link-underline text-[0.72rem] uppercase tracking-[0.28em] transition-colors ${
-                pathname === l.href ? "text-cocoa font-medium" : "text-cocoa/80 hover:text-cocoa"
+              className={`link-underline text-[17px]  transition-colors ${
+                pathname === l.href ? "text-cocoa font-semibold" : "text-cocoa/80 hover:text-cocoa"
               }`}
             >
               {l.label}

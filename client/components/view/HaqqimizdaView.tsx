@@ -3,7 +3,7 @@ import { Divider } from "@/components/common/Ornaments";
 import { aboutValues } from "@/constant/SectionData";
 
 const aboutCraft =
-  "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1974&auto=format&fit=crop";
+  "/felsefemiz3.jpg";
 
 export default function About() {
   return (
@@ -32,7 +32,7 @@ export default function About() {
 
           <div className="relative w-full aspect-5/4 md:aspect-4/3 flex items-center justify-center">
             <img
-              src="/milli-local-spirit.jpg"
+              src="/IMG_6381.PNG"
               alt="Milli Local Spirit"
               className="w-full h-full object-contain rounded-tl-[80px] rounded-br-[80px] md:rounded-tl-[120px] md:rounded-br-[120px]"
             />
@@ -91,7 +91,7 @@ export default function About() {
 
           <div className="relative w-full aspect-4/5 md:aspect-square p-2 md:p-6">
             <img
-              src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=2070&auto=format&fit=crop"
+              src="/haqqımızdasef1.jpg"
               alt="Milli service"
               className="w-full h-full object-cover rounded-tl-[80px] rounded-br-[80px] md:rounded-tl-[120px] md:rounded-br-[120px] shadow-xl"
             />

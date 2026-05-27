@@ -16,7 +16,7 @@ export function Divider({ className = "" }: Props) {
   return (
     <div className={`flex items-center justify-center gap-6 text-bronze ${className}`}>
       <span className="h-px w-24 bg-current opacity-40" />
-      <ButaOrnament className="h-8 w-6" />
+      <img src="/buta2.PNG" alt="" aria-hidden className="h-16 w-auto object-contain" />
       <span className="h-px w-24 bg-current opacity-40" />
     </div>
   );

@@ -6,7 +6,7 @@ import TeamSection from "../sections/home/TeanSection";
 import BlogSection from "../sections/home/BlogSection";
 import ContactSection from "../sections/home/ContactSection";
 
-export default function HomeView() {
+export default function xHomeView() {
   return (
     <>
       <HeroSection />

@@ -25,7 +25,7 @@ export default function BlogSlider() {
       <div className="container-luxe">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
-            <span className="eyebrow">Jurnal</span>
+            <span className="eyebrow">Bloq</span>
             <h2 className="display mt-6 text-3xl md:text-5xl">
               Hekayələr və ilhamlar
             </h2>

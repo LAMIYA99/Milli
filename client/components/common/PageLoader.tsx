@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ButaOrnament } from "@/components/common/Ornaments";
+
 import { Logo } from "./Logo";
 
 export default function PageLoader() {
@@ -43,7 +43,7 @@ export default function PageLoader() {
     >
       <div className="relative flex flex-col items-center select-none pointer-events-none w-72">
         <div className={`transition-all duration-1000 ${loading ? "scale-100 opacity-100" : "scale-90 opacity-0"}`}>
-          <ButaOrnament className="h-10 w-8 text-bronze shadow-glow mb-4 animate-pulse" />
+          <img src="/buta2.PNG" alt="" className="h-20 w-auto object-contain mb-4 animate-pulse" />
         </div>
 
         <Logo className="w-56 h-auto text-cocoa" />

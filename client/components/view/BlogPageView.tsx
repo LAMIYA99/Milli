@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Blog() {
   return (
     <>
-      <PageHeader eyebrow="Jurnal" title="Mətbəxin arxasında" subtitle="Hekayələr, reseptlər və yerli ilhamlar — MİLLİ jurnalından." />
+      <PageHeader eyebrow="Bloq" title="Mətbəxin arxasında" subtitle="Hekayələr, reseptlər və yerli ilhamlar — MİLLİ jurnalından." />
       <section className="container-luxe pb-32">
         <div className="grid gap-12 md:grid-cols-3">
           {blogPosts.map((p) => (

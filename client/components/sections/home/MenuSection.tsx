@@ -1,4 +1,4 @@
-import { ButaOrnament, Divider } from "@/components/common/Ornaments";
+import { Divider } from "@/components/common/Ornaments";
 import { menu } from "@/constant/SectionData";
 import Link from "next/link";
 
@@ -36,10 +36,7 @@ export default function MenuSection() {
                 <div className="absolute inset-0 bg-linear-to-t from-cocoa/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </div>
               <div className="relative border-t border-bronze/20 p-8">
-                <ButaOrnament className="absolute -top-5 right-6 h-10 w-8 bg-card text-bronze opacity-60" />
-                <p className="text-[0.65rem] uppercase tracking-[0.32em] text-bronze">
-                  0{i + 1} · İmza
-                </p>
+                <img src="/buta2.PNG" alt="" className="absolute -top-5 right-6 h-12 w-auto opacity-60" />
                 <h3 className="display mt-3 text-2xl text-cocoa">{m.name}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {m.desc}

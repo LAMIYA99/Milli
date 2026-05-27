@@ -1,28 +1,20 @@
-import { heroCafe, textureCarpet } from "@/constant/SectionData";
+import { textureCarpet } from "@/constant/SectionData";
 import Link from "next/link";
 
 export default function HeroSection() {
   return (
     <section className="relative h-screen min-h-170 w-full overflow-hidden">
       <img
-        src={heroCafe}
+        src="/IMG_7725.PNG"
         alt="MİLLİ café atmosferi"
-        className="absolute inset-0 h-full w-full object-cover animate-ken-burns"
+        className="absolute animate-ken-burns inset-0 h-full w-full object-cover"
         width={1920}
         height={1280}
       />
       <div className="absolute inset-0 bg-linear-to-b from-cocoa/40 via-cocoa/30 to-cocoa/85" />
-      <img
-        src={textureCarpet}
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.07] mix-blend-overlay"
-      />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-cream">
-        <span className="eyebrow text-cream/80 animate-fade-in">
-          Yerli Ruhla · Est. 2018
-        </span>
+    
         <h1 className="display mt-8 text-6xl leading-[0.95] sm:text-7xl md:text-[8.5rem] animate-fade-up">
           MİLLİ
         </h1>
@@ -30,8 +22,7 @@ export default function HeroSection() {
           className="mt-6 max-w-xl text-base leading-relaxed text-cream/85 md:text-lg animate-fade-up"
           style={{ animationDelay: ".15s" }}
         >
-          Azərbaycanın qədim qonaqpərvərliyi — müasir incəlik və əl sənətkarlığı
-          ilə yenidən nəfəs alır.
+       Milli – qlobal dadları yerli ruh, təbii seçim və premium keyfiyyətlə bir araya gətirir.
         </p>
 
         <div
@@ -42,7 +33,7 @@ export default function HeroSection() {
             href="/lezzetlerimiz"
             className="btn-primary border-cream! bg-cream! text-cocoa! hover:bg-transparent! hover:text-cream!"
           >
-            Hamısına bax
+         Ləzzətlərimizə bax
             <span aria-hidden>→</span>
           </Link>
           <Link

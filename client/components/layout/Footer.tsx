@@ -20,22 +20,22 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="mb-5 text-[0.7rem] uppercase tracking-[0.32em] text-cream/50">
-              Naviqasiya
+            <p className="mb-5 text-[20px] font-semibold   text-cream/50">
+            Səhifələr
             </p>
-            <ul className="space-y-3 text-sm text-cream/80">
+            <ul className="space-y-3 text-[17px] text-cream/80">
               <li><Link href="/haqqimizda" className="link-underline">Haqqımızda</Link></li>
               <li><Link href="/lezzetlerimiz" className="link-underline">Ləzzətlərimiz</Link></li>
               <li><Link href="/gallery" className="link-underline">Qalereya</Link></li>
-              <li><Link href="/blog" className="link-underline">Blog</Link></li>
+              <li><Link href="/blog" className="link-underline">Bloq</Link></li>
             </ul>
           </div>
 
           <div>
-            <p className="mb-5 text-[0.7rem] uppercase tracking-[0.32em] text-cream/50">
+            <p className="mb-5 text-[20px] font-semibold text-cream/50">
               Əlaqə
             </p>
-            <ul className="space-y-3 text-sm text-cream/80">
+            <ul className="space-y-3 text-[17px] text-cream/80">
               <li>Nizami küçəsi 78, Bakı</li>
               <li>+994 12 345 67 89</li>
               <li>salam@milli.az</li>
