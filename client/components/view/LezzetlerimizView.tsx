@@ -1,6 +1,6 @@
 import { PageHeader } from "@/components/common/PageHeader";
 import { Divider } from "@/components/common/Ornaments";
-import { comboItems, images, menuArchitectureItems, saladFeatures } from "@/constant/SectionData";
+import { comboItems, images, menu, menuArchitectureItems, saladFeatures } from "@/constant/SectionData";
 
 
 
@@ -11,7 +11,7 @@ export default function Menu() {
     <>
       <PageHeader
         eyebrow="Kulinariya Jurnalı"
-        title="MİLLİ Ləzzət Təcrübəsi"
+        title="Milli Ləzzət Təcrübəsi"
         subtitle="Bura sadəcə bir menyu deyil, hər bir reseptin, hər bir paketin və qablaşdırmanın öz hekayəsi olan kulinariya səyahətidir."
       />
 
@@ -29,24 +29,37 @@ export default function Menu() {
             <Divider className="my-8 justify-start! w-full border-black/10" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-            {menuArchitectureItems.map((item) => (
-              <div key={item.id} className="group cursor-pointer">
-                <div className="relative aspect-4/5 rounded-3xl overflow-hidden bg-[#F2EDE4] mb-6">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                <h3 className="display text-2xl md:text-3xl mb-3 text-cocoa">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-[15px]">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
+            <div className="mt-20 grid gap-10 md:grid-cols-3">
+                   {menu.map((m, i) => (
+                     <article
+                       key={m.name}
+                       className="group relative bg-card  transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_30px_60px_-30px_rgba(78,41,27,0.45)]"
+                     >
+                       <div className="relative aspect-4/5 overflow-hidden">
+                         <img
+                           src={m.img}
+                           alt={m.name}
+                           className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                           loading="lazy"
+                           width={1024}
+                           height={1280}
+                         />
+                         <div className="absolute inset-0 bg-linear-to-t from-cocoa/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                       </div>
+                       <div className="relative border-t border-bronze/20 p-8">
+                         <img src="/buta2.PNG" alt="" className="absolute -top-5 right-6 h-12 w-auto opacity-60" />
+                         <h3 className="display mt-3 text-2xl text-cocoa">{m.name}</h3>
+                         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                           {m.desc}
+                         </p>
+                       </div>
+                     </article>
+                   ))}
+                 </div>
         </section>
 
 
-        <section className="py-20 md:py-28 bg-[#FEF1E1] -mx-4 px-4 md:-mx-8 md:px-8 lg:-mx-16 lg:px-16 mt-12 mb-12">
+        <section className="py-20 md:py-28 bg-[#FEF1E1] dark:bg-[#1A0E0C] -mx-4 px-4 md:-mx-8 md:px-8 lg:-mx-16 lg:px-16 mt-12 mb-12">
           <div className="mb-16 max-w-4xl">
             <span className="eyebrow mb-4 block">
               Kampaniyalar & Xüsusi Təkliflər

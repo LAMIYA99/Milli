@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/common/PageHeader";
 import { Divider } from "@/components/common/Ornaments";
 import { aboutValues } from "@/constant/SectionData";
+import FelsefemizSection from "@/components/sections/shared/FelsefemizSection";
 
 const aboutCraft =
   "/felsefemiz3.jpg";
@@ -14,7 +15,7 @@ export default function About() {
         subtitle="MİLLİ — bir məkan deyil, Azərbaycan mədəniyyətinə həsr olunmuş canlı bir hekayədir. Hər küncündə bir nəsil, hər ləzzətində bir vətən."
       />
 
-      <section className="py-20 md:py-32 bg-[#FEF1E1]">
+      <section className="py-20 md:py-32 bg-[#FEF1E1] dark:bg-[#1A0E0C]">
         <div className="container-luxe grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <div className="flex flex-col items-start max-w-xl">
             <span className="eyebrow mb-6">Brend dəyərləri & missiya</span>
@@ -40,35 +41,9 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container-luxe grid items-center gap-16 md:grid-cols-2">
-          <img
-            src={aboutCraft}
-            alt="Sənətkar"
-            className="aspect-4/5 w-130 h-130 object-cover rounded-tl-[80px] rounded-br-[80px] md:rounded-tl-[120px] md:rounded-br-[120px] shadow-xl"
-            loading="lazy"
-          />
-          <div>
-            <span className="eyebrow">Fəlsəfəmiz</span>
-            <h2 className="display mt-6 text-4xl md:text-5xl">
-              Bir fincan çay, bir əsr hekayə.
-            </h2>
-            <Divider className="my-8 justify-start!" />
-            <p className="leading-relaxed text-muted-foreground">
-              Bizim üçün yemək — sadəcə qida deyil, ünsiyyətin ən qədim
-              formasıdır. MİLLİ-də ənənəvi reseptlər müasir texnika ilə qovuşur,
-              əl ilə hazırlanmış hər detal isə sizə evdə olduğunuzu xatırladır.
-            </p>
-            <p className="mt-6 leading-relaxed text-muted-foreground">
-              Biz Azərbaycan mətbəxinin incəliyini, Şəki şirniyyatının
-              zərifliyini və Lənkəran çayının sakitliyini bir məkanda
-              toplamışıq.
-            </p>
-          </div>
-        </div>
-      </section>
+      <FelsefemizSection />
 
-      <section className="py-20 md:py-32 bg-[#FEF1E1]">
+      <section className="py-20 md:py-32 bg-[#FEF1E1] dark:bg-[#1A0E0C]">
         <div className="container-luxe grid items-center gap-16 md:grid-cols-2">
           <div className="flex flex-col items-start max-w-xl">
             <h2 className="eyebrow">Populyar Qlobal Dadlar</h2>
@@ -99,7 +74,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-[#FEF1E1] py-24">
+      <section className="bg-[#FEF1E1] dark:bg-[#1A0E0C] py-24">
         <div className="container-luxe">
           <div className="mb-16 text-center">
             <span className="eyebrow">Dəyərlərimiz</span>

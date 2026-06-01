@@ -7,8 +7,8 @@ export const images = {
   comboStudent: "https://images.unsplash.com/photo-1594212691516-436fba265008?q=80&w=2070&auto=format&fit=crop",
   saladBar: "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=2070&auto=format&fit=crop",
   fastfood1: "/yemek1.jpg",
-  fastfood2: "https://images.unsplash.com/photo-1553315752-6ab5158226d9?q=80&w=2070&auto=format&fit=crop",
-  fastfood3: "https://images.unsplash.com/photo-1610440042657-612c34d95e9f?q=80&w=1974&auto=format&fit=crop",
+  fastfood2: "/yemek2.jpg",
+  fastfood3: "/yemek3.jpg",
 };
 
 

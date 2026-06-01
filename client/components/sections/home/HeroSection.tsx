@@ -45,11 +45,11 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center gap-3 text-cream/70">
+      <div className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center gap-3 text-cream/90">
         <span className="text-[0.6rem] uppercase tracking-[0.4em]">
           Aşağı sürüşdür
         </span>
-        <div className="h-12 w-px bg-cream/40 animate-scroll-hint" />
+        <div className="h-12 w-px bg-cream/90 animate-scroll-hint" />
       </div>
     </section>
   );

@@ -19,7 +19,7 @@ export default function TeamSection() {
         <div className="mt-20 grid gap-12 md:grid-cols-3">
           {team.map((m) => (
             <div key={m.name} className="group">
-              <div className="aspect-4/5 overflow-hidden rounded-2xl border border-cocoa/10">
+              <div className="aspect-4/5 overflow-hidden  border border-cocoa/10">
                 <img
                   src={m.img}
                   alt={m.name}

@@ -121,6 +121,65 @@ export default function Contact() {
         <div className="aspect-[21/9] w-full border border-cocoa/15 overflow-hidden rounded-3xl relative min-h-[350px] md:min-h-[450px]">
           <ClientMap />
         </div>
+        <div className="mt-18">
+            <div>
+            <span className="eyebrow text-bronze">Ünvanlarımız</span>
+            <h2 className="display mt-6 text-4xl md:text-5xl">
+              Süfrəmizə
+              <br />
+              <em className="not-italic text-bronze">xoş gəlmisiniz.</em>
+            </h2>
+            <p className="mt-6 mb-10 max-w-md leading-relaxed text-cocoa/75">
+              Sizi sevgiylə hazırlanmış bir fincan çay və qədim bir hekayə ilə
+              aşağıdakı məkanlarımızda gözləyirik.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+              <div>
+                <h3 className="display text-2xl text-cocoa">BRAVO Azure</h3>
+                <p className="mt-2 text-sm text-cocoa/80">
+                  Afiyəddin Cəlilov küçəsi 27a
+                </p>
+                <p className="mt-1 text-xs text-bronze font-medium">
+                  Hər gün: 09:00 - 23:00
+                </p>
+              </div>
+              <div>
+                <h3 className="display text-2xl text-cocoa">BRAVO 20 Bayıl</h3>
+                <p className="mt-2 text-sm text-cocoa/80">
+                  Şahlar Allahverdiyev küçəsi 6b
+                </p>
+                <p className="mt-1 text-xs text-bronze font-medium">
+                  Hər gün: 09:00 - 23:00
+                </p>
+              </div>
+              <div>
+                <h3 className="display text-2xl text-cocoa">BRAVO Lökbatan</h3>
+                <p className="mt-2 text-sm text-cocoa/80">
+                  Qobu şosesi, 28 May küçəsi
+                </p>
+                <p className="mt-1 text-xs text-bronze font-medium">
+                  Hər gün: 09:00 - 23:00
+                </p>
+              </div>
+              <div>
+                <h3 className="display text-2xl text-cocoa">BRAVO Babək</h3>
+                <p className="mt-2 text-sm text-cocoa/80">Babək pr. 94</p>
+                <p className="mt-1 text-xs text-bronze font-medium">
+                  Hər gün: 09:00 - 23:00
+                </p>
+              </div>
+              <div>
+                <h3 className="display text-2xl text-cocoa opacity-60">
+                  BRAVO Oazis
+                </h3>
+                <p className="mt-2 text-sm text-cocoa/50">
+                  Açılış mərhələsində
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );

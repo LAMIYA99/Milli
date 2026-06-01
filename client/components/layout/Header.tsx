@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Logo } from "../common/Logo";
+import { ThemeToggle } from "../common/ThemeToggle";
 
 interface NavLink {
   href: string;
@@ -63,6 +64,10 @@ export function Navbar() {
           ))}
         </nav>
 
+        <div className="hidden lg:flex items-center">
+          <ThemeToggle />
+        </div>
+
 
 
         <button
@@ -81,6 +86,10 @@ export function Navbar() {
             }`}
           />
         </button>
+
+        <div className="flex items-center lg:hidden gap-4 absolute right-16 top-1/2 -translate-y-1/2">
+          <ThemeToggle />
+        </div>
       </div>
 
       {open && (

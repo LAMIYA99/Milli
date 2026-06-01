@@ -3,7 +3,7 @@ import { textureCarpet } from "@/constant/SectionData";
 
 export default function ContactSection() {
     return (
-      <section className="relative overflow-hidden bg-[#FCEAD7] py-32 text-cocoa">
+      <section className="relative overflow-hidden bg-[#FCEAD7] dark:bg-[#1A0E0C] py-32 text-cocoa">
         <img
           src={textureCarpet}
           alt=""
@@ -68,7 +68,7 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-          <div className="relative aspect-square overflow-hidden rounded-3xl border border-cocoa/15 lg:aspect-auto lg:h-150">
+          <div className="relative aspect-square overflow-hidden border border-cocoa/15 lg:aspect-auto lg:h-150">
             <ClientMap />
           </div>
         </div>
