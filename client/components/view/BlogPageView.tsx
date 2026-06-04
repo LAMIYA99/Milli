@@ -1,7 +1,5 @@
 import { PageHeader } from "@/components/common/PageHeader";
 import { blogPosts } from "@/constant/SectionData";
-import Link from "next/link";
-
 
 export default function Blog() {
   return (
@@ -20,7 +18,6 @@ export default function Blog() {
                 </p>
                 <h2 className="display mt-3 text-2xl text-cocoa group-hover:text-bronze transition-colors">{p.title}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.excerpt}</p>
-                <Link href="/blog" className="link-underline mt-4 inline-block text-xs uppercase tracking-[0.28em] text-cocoa">Oxu →</Link>
               </div>
             </article>
           ))}
