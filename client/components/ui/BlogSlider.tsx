@@ -81,7 +81,7 @@ export default function BlogSlider() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground line-clamp-3">
                   {p.excerpt}
                 </p>
-                <Link href="/blog" className="link-underline mt-4 inline-block text-xs uppercase tracking-[0.28em] text-cocoa font-medium">
+                <Link href="/blogdetail" className="link-underline mt-4 inline-block text-xs uppercase tracking-[0.28em] text-cocoa font-medium">
                   Oxu →
                 </Link>
               </div>

@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef, useState, useEffect } from "react";
 import { PageHeader } from "@/components/common/PageHeader";
 import { Divider } from "@/components/common/Ornaments";
 import { comboItems, images, menu, menuArchitectureItems, saladFeatures } from "@/constant/SectionData";
@@ -7,6 +10,36 @@ import { comboItems, images, menu, menuArchitectureItems, saladFeatures } from "
 
 
 export default function Menu() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeComboIndex, setActiveComboIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveComboIndex((prev) => (prev + 1) % comboItems.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextCombo = () => {
+    setActiveComboIndex((prev) => (prev + 1) % comboItems.length);
+  };
+
+  const prevCombo = () => {
+    setActiveComboIndex((prev) => (prev - 1 + comboItems.length) % comboItems.length);
+  };
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -350, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 350, behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <PageHeader
@@ -18,23 +51,49 @@ export default function Menu() {
       <div className="container-luxe pb-32">
         
         <section className="py-16 md:py-24 border-b border-black/5">
-          <div className="mb-12 md:mb-16">
-            <h2 className="display text-5xl md:text-6xl lg:text-7xl mb-6 text-cocoa">
-              Menyu<br className="hidden md:block"/> Arxitekturası
-            </h2>
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground max-w-3xl">
-              MİLLİ brendi altında yenilənmiş və standartlaşdırılmış vizual elementlər. 
-              Beynəlxalq keyfiyyətin Local Spirit harmoniyası.
-            </p>
-            <Divider className="my-8 justify-start! w-full border-black/10" />
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16">
+            <div>
+              <h2 className="display text-5xl md:text-6xl lg:text-7xl mb-6 text-cocoa">
+                Menyu<br className="hidden md:block"/> Arxitekturası
+              </h2>
+              <p className="text-lg md:text-xl leading-relaxed text-muted-foreground max-w-3xl">
+                MİLLİ brendi altında yenilənmiş və standartlaşdırılmış vizual elementlər. 
+                Beynəlxalq keyfiyyətin Local Spirit harmoniyası.
+              </p>
+            </div>
+            <div className="flex gap-4 mt-6 md:mt-0">
+              <button 
+                onClick={scrollLeft}
+                className="w-12 h-12 rounded-full border border-cocoa/20 flex items-center justify-center text-cocoa hover:bg-cocoa hover:text-cream hover:border-cocoa transition-all duration-300 active:scale-95"
+                aria-label="Əvvəlki"
+              >
+                <svg className="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button 
+                onClick={scrollRight}
+                className="w-12 h-12 rounded-full border border-cocoa/20 flex items-center justify-center text-cocoa hover:bg-cocoa hover:text-cream hover:border-cocoa transition-all duration-300 active:scale-95"
+                aria-label="Növbəti"
+              >
+                <svg className="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
+          <Divider className="my-8 justify-start! w-full border-black/10" />
 
-            <div className="mt-20 grid gap-10 md:grid-cols-3">
-                   {menu.map((m, i) => (
-                     <article
-                       key={m.name}
-                       className="group relative bg-card  transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_30px_60px_-30px_rgba(78,41,27,0.45)]"
-                     >
+          <div 
+            ref={scrollRef}
+            className="mt-20 flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 no-scrollbar scrollbar-none"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {menu.map((m, i) => (
+              <article
+                key={m.name}
+                className="min-w-[280px] sm:min-w-[340px] md:min-w-[380px] max-w-[380px] snap-start group relative bg-card flex-shrink-0 transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_30px_60px_-30px_rgba(78,41,27,0.45)]"
+              >
                        <div className="relative aspect-4/5 overflow-hidden">
                          <img
                            src={m.img}
@@ -60,32 +119,67 @@ export default function Menu() {
 
 
         <section className="py-20 md:py-28 bg-[#FEF1E1] dark:bg-[#1A0E0C] -mx-4 px-4 md:-mx-8 md:px-8 lg:-mx-16 lg:px-16 mt-12 mb-12">
-          <div className="mb-16 max-w-4xl">
-            <span className="eyebrow mb-4 block">
-              Kampaniyalar & Xüsusi Təkliflər
-            </span>
-            <h2 className="display text-5xl md:text-6xl lg:text-7xl text-cocoa">
-              Dadlı Təkliflər və Kombo Menyular
-            </h2>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div className="max-w-4xl">
+              <span className="eyebrow mb-4 block">
+                Kampaniyalar & Xüsusi Təkliflər
+              </span>
+              <h2 className="display text-5xl md:text-6xl lg:text-7xl text-cocoa">
+                Dadlı Təkliflər və Kombo Menyular
+              </h2>
+            </div>
+            
+            <div className="flex gap-4 mt-6 md:mt-0">
+              <button 
+                onClick={prevCombo}
+                className="w-12 h-12 rounded-full border border-cocoa/20 flex items-center justify-center text-cocoa hover:bg-cocoa hover:text-cream hover:border-cocoa transition-all duration-300 active:scale-95"
+                aria-label="Əvvəlki"
+              >
+                <svg className="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button 
+                onClick={nextCombo}
+                className="w-12 h-12 rounded-full border border-cocoa/20 flex items-center justify-center text-cocoa hover:bg-cocoa hover:text-cream hover:border-cocoa transition-all duration-300 active:scale-95"
+                aria-label="Növbəti"
+              >
+                <svg className="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {comboItems.map((combo) => (
-              <div key={combo.id} className="group cursor-pointer bg-white rounded-4xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
-                <div className="relative aspect-16/10 overflow-hidden">
-                  <img src={combo.image} alt={combo.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-                </div>
-                <div className="p-8 md:p-10 flex flex-col grow">
-                  <h3 className="display text-3xl md:text-4xl mb-4 text-cocoa">{combo.title}</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-10 grow">
-                    {combo.description}
-                  </p>
-                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-cocoa/10">
-                    <span className="eyebrow text-xs! mb-0!">{combo.category}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="relative overflow-hidden w-full mx-auto rounded-4xl bg-white dark:bg-[#2A1814] shadow-xl">
+             <div className="flex transition-transform duration-1000 ease-in-out" style={{ transform: `translateX(-${activeComboIndex * 100}%)` }}>
+                {comboItems.map((combo) => (
+                   <div key={combo.id} className="min-w-full group flex flex-col">
+                      <div className="relative aspect-[4/3] md:aspect-[2.5/1] overflow-hidden">
+                         <img src={combo.image} alt={combo.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                      </div>
+                      <div className="p-8 md:p-12 lg:p-16 flex flex-col grow">
+                         <h3 className="display text-4xl md:text-5xl lg:text-6xl mb-6 text-cocoa dark:text-cream">{combo.title}</h3>
+                         <p className="text-xl lg:text-[22px] text-muted-foreground leading-relaxed mb-12 max-w-5xl">
+                            {combo.description}
+                         </p>
+                         <div className="flex items-center justify-between mt-auto pt-8 border-t border-cocoa/10">
+                            <span className="eyebrow text-sm! mb-0!">{combo.category}</span>
+                            <div className="flex gap-2">
+                               {comboItems.map((_, idx) => (
+                                 <button 
+                                   key={idx} 
+                                   onClick={() => setActiveComboIndex(idx)}
+                                   className={`h-2 rounded-full transition-all duration-300 ${activeComboIndex === idx ? 'w-8 bg-cocoa dark:bg-cream' : 'w-2 bg-cocoa/30 dark:bg-cream/30'}`}
+                                   aria-label={`Slayd ${idx + 1}`}
+                                 />
+                               ))}
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                ))}
+             </div>
           </div>
         </section>
 

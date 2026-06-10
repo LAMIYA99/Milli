@@ -52,18 +52,18 @@ export default function Contact() {
           <span className="eyebrow">Bizi tap</span>
           <h2 className="display mt-6 text-3xl md:text-4xl">Bakının qəlbində</h2>
           <Divider className="my-8 !justify-start" />
-          <ul className="space-y-5 text-base text-cocoa">
-            <li><span className="text-bronze text-xs uppercase tracking-[0.28em] block mb-1">Baş Ofis</span>Nizami küçəsi 78, Bakı, AZ1000</li>
-            <li><span className="text-bronze text-xs uppercase tracking-[0.28em] block mb-1">Telefon</span>+994 12 345 67 89</li>
-            <li><span className="text-bronze text-xs uppercase tracking-[0.28em] block mb-1">Təklif və iradlarınızı bizə yollayın</span>salam@milli.az</li>
-            <li><span className="text-bronze text-xs uppercase tracking-[0.28em] block mb-1">Məkanlarımız</span>BRAVO Azure · BRAVO Bayıl · BRAVO Lökbatan · BRAVO Babək</li>
+          <ul className="space-y-5 mt-14 text-base text-cocoa">
+            <li><span className="text-bronze text-[16px] uppercase tracking-[0.28em] block mb-1">Baş Ofis</span>Nizami küçəsi 78, Bakı, AZ1000</li>
+            <li><span className="text-bronze text-[16px] uppercase tracking-[0.28em] block mb-1">Telefon</span>+994 12 345 67 89</li>
+            <li><span className="text-bronze text-[16px] uppercase tracking-[0.28em] block mb-1">Təklif və iradlarınızı bizə yollayın</span>salam@milli.az</li>
+
           </ul>
         </div>
 
         <form className="space-y-6 border border-cocoa/15 bg-card p-8 md:p-10 flex flex-col justify-between" onSubmit={handleSubmit}>
           <div className="space-y-6">
             <div>
-              <label className="text-[0.65rem] uppercase tracking-[0.28em] text-bronze">Ad Soyad</label>
+              <label className="text-[0.75rem] uppercase tracking-[0.28em] text-bronze">Ad Soyad</label>
               <input 
                 required
                 value={formData.name}
@@ -72,7 +72,7 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label className="text-[0.65rem] uppercase tracking-[0.28em] text-bronze">E-poçt</label>
+              <label className="text-[0.75rem] uppercase tracking-[0.28em] text-bronze">E-poçt</label>
               <input 
                 required
                 type="email" 
@@ -82,7 +82,7 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label className="text-[0.65rem] uppercase tracking-[0.28em] text-bronze">Təklif və İradlarınız</label>
+              <label className="text-[0.75rem] uppercase tracking-[0.28em] text-bronze">Təklif və İradlarınız</label>
               <textarea 
                 required
                 rows={4} 

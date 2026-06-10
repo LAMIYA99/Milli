@@ -19,7 +19,7 @@ export default function MenuSection() {
         </div>
 
         <div className="mt-20 grid gap-10 md:grid-cols-3">
-          {menu.map((m, i) => (
+          {menu.slice(0, 3).map((m, i) => (
             <article
               key={m.name}
               className="group relative bg-card transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_30px_60px_-30px_rgba(78,41,27,0.45)]"

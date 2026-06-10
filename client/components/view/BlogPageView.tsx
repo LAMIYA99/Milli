@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/common/PageHeader";
 import { blogPosts } from "@/constant/SectionData";
+import Link from "next/link";
 
 export default function Blog() {
   return (
@@ -12,12 +13,19 @@ export default function Blog() {
               <div className="aspect-[4/5] overflow-hidden">
                 <img src={p.img} alt={p.title} className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
               </div>
-              <div className="mt-6">
+             <div className="mt-6">
                 <p className="text-[0.65rem] uppercase tracking-[0.32em] text-bronze">
                   {p.cat} · {p.date}
                 </p>
-                <h2 className="display mt-3 text-2xl text-cocoa group-hover:text-bronze transition-colors">{p.title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.excerpt}</p>
+                <h3 className="display mt-3 text-xl md:text-2xl text-cocoa group-hover:text-bronze transition-colors duration-300 line-clamp-2">
+                  {p.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground line-clamp-3">
+                  {p.excerpt}
+                </p>
+                <Link href="/blogdetail" className="link-underline mt-4 inline-block text-xs uppercase tracking-[0.28em] text-cocoa font-medium">
+                  Oxu →
+                </Link>
               </div>
             </article>
           ))}

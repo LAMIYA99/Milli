@@ -4,7 +4,7 @@ export const images = {
   burger: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1899&auto=format&fit=crop",
   drinks: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1974&auto=format&fit=crop",
   comboFamily: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop",
-  comboStudent: "https://images.unsplash.com/photo-1594212691516-436fba265008?q=80&w=2070&auto=format&fit=crop",
+  comboStudent: "https://media.istockphoto.com/id/1143191120/photo/traditional-moroccan-tajine-of-chicken-with-dried-fruits-and-spices.webp?a=1&b=1&s=612x612&w=0&k=20&c=r47XwaD2B0MS_ynn-3vG3aXU3zOVb71TYh4bdU4GZUw=",
   saladBar: "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=2070&auto=format&fit=crop",
   fastfood1: "/yemek1.jpg",
   fastfood2: "/yemek2.jpg",
@@ -99,6 +99,9 @@ export const menu = [
   { name: "PLOV BOX", desc: "Azərbaycan mətbəxinin sevilən plovunu müasir təqdimatla bir araya gətirən Plov Box, ənənəvi dadı qoruyaraq hər yeməyi rahat, doyumlu və zövqlü təcrübəyə çevirir.", img: menuPakhlava },
   { name: "DÖNƏR", desc: "Yüksək keyfiyyətli ətdən, təzə tərəvəzlərdən və xüsusi reseptlə hazırlanan souslardan hazırlanan dönərimiz hər porsiyada zəngin dad və tam doyum hissi təqdim edir..", img: menuTea },
   { name: "KABAB BURGER", desc: "Ənənəvi kabab ləzzətini burger formatında təqdim edən Kabab Burger, yerli mətbəxin sevilən dadlarını müasir fast-food təcrübəsi ilə birləşdirərək fərqli seçim axtaranlara unudulmaz dad bəxş edir.", img: menuCoffee },
+  { name: "MİLLİ SALAT", desc: "Yerli fermerlərdən alınan təzə tərəvəzlərlə və xüsusi narşərab sousu ilə hazırlanan milli salatımız yeməyinizə yüngüllük və ləzzət qatacaq.", img: menuTea },
+  { name: "TƏNDİR ŞAÜRMASI", desc: "İsti təndir çörəyi arasında bol ət və xüsusi Milli sousu ilə təqdim edilən şaürma sizə ənənəvi və müasir ləzzəti eyni anda daddıracaq.", img: menuCoffee },
+  { name: "MİLLİ İÇKİLƏR", desc: "Təzə meyvələrdən hazırlanan kompotlar və ənənəvi ayranımız yeməklərinizin ən yaxşı tamamlayıcısı olaraq süfrənizi bəzəyir.", img: menuPakhlava },
 ];
 
 export const aboutValues = [
