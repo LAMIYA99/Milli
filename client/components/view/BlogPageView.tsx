@@ -23,7 +23,7 @@ export default function Blog() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground line-clamp-3">
                   {p.excerpt}
                 </p>
-                <Link href="/blogdetail" className="link-underline mt-4 inline-block text-xs uppercase tracking-[0.28em] text-cocoa font-medium">
+                <Link href={`/blog/${p.id}`} className="link-underline mt-4 inline-block text-xs uppercase tracking-[0.28em] text-cocoa font-medium">
                   Oxu →
                 </Link>
               </div>
