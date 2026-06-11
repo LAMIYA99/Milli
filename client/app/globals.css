@@ -43,6 +43,17 @@
   --font-body: var(--font-inter), "Helvetica Neue", system-ui, sans-serif;
   
   --radius: 0.25rem;
+
+  /* Admin panel colors */
+  --color-milli-light: #FEF1E1;
+  --color-milli-dark: #4D271A;
+  --color-milli-primary: #A8693D;
+  --color-zinc-50: #FEF1E1;
+  --color-zinc-900: #4D271A;
+  --color-zinc-950: #3a1d14;
+  --color-amber-400: #c27a47;
+  --color-amber-500: #A8693D;
+  --color-amber-600: #8f5933;
 }
 
 @layer base {
