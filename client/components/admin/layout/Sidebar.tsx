@@ -20,6 +20,7 @@ const navItems = [
   { name: "Qalereya", href: "/admin/gallery", icon: ImageIcon },
   { name: "Bloq", href: "/admin/blog", icon: PenTool },
   { name: "Əlaqə", href: "/admin/contact", icon: Mail },
+  { name: "Header & Footer", href: "/admin/settings", icon: Settings },
 ];
 
 export default function Sidebar({ onLogout }: { onLogout?: () => void }) {

@@ -29,6 +29,30 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const [navLinks, setNavLinks] = useState<NavLink[]>(links);
+
+  useEffect(() => {
+    const loadLinks = () => {
+      const saved = localStorage.getItem("milli_layout_settings");
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (parsed.navLinks && Array.isArray(parsed.navLinks)) {
+            setNavLinks(parsed.navLinks);
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      } else {
+        setNavLinks(links);
+      }
+    };
+
+    loadLinks();
+
+    window.addEventListener("milli_settings_updated", loadLinks);
+    return () => window.removeEventListener("milli_settings_updated", loadLinks);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -51,9 +75,9 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-10 lg:flex">
-          {links.map((l) => (
+          {navLinks.map((l) => (
             <Link
-              key={l.href}
+              key={l.href + l.label}
               href={l.href || "/"}
               className={`link-underline text-[17px]  transition-colors ${
                 pathname === l.href ? "text-cocoa font-semibold" : "text-cocoa/80 hover:text-cocoa"
@@ -95,9 +119,9 @@ export function Navbar() {
       {open && (
         <div className="border-t border-cocoa/10 bg-cream lg:hidden">
           <div className="container-luxe flex flex-col py-6">
-            {links.map((l) => (
+            {navLinks.map((l) => (
               <Link
-                key={l.href || l.label}
+                key={(l.href || "") + l.label}
                 href={l.href || "/"}
                 onClick={() => setOpen(false)}
                 className="border-b border-cocoa/5 py-4 text-sm uppercase tracking-[0.28em] text-cocoa"
